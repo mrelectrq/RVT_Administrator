@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RVT_A_DataLayer\RVT_A_DataLayer.csproj" />
+    <ProjectReference Include="..\RVT_Block_lib\RVT_Block_lib.csproj" />
+  </ItemGroup>
+
+</Project>
