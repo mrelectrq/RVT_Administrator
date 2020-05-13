@@ -3017,7 +3017,8 @@
           "Microsoft.EntityFrameworkCore": "3.1.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
           "RVT_A_BusinessLayer": "1.0.0",
-          "RVT_A_DataLayer": "1.0.0"
+          "RVT_A_DataLayer": "1.0.0",
+          "RVT_Block_lib": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RVT_Administrator.dll": {}
@@ -3047,7 +3048,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "RVT_Block_lib": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RVT_A_DataLayer.dll": {}
@@ -9597,6 +9599,7 @@
       "MSTest.TestFramework >= 2.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "RVT_Administrator >= 1.0.0",
+      "RVT_Block_lib >= 1.0.0",
       "coverlet.collector >= 1.2.0"
     ]
   },
@@ -9628,6 +9631,9 @@
           "projectReferences": {
             "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
               "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
+            },
+            "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+              "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
             }
           }
         }

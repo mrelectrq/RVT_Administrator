@@ -12,8 +12,5 @@ namespace RVT_A_DataLayer.Entities
         public DateTime? RegisterDate { get; set; }
         public string IpAddress { get; set; }
         public string StatusNumber { get; set; }
-        public string PublicSector { get; set; }
-        public string Gender { get; set; }
-        public int? BirthYear { get; set; }
     }
 }

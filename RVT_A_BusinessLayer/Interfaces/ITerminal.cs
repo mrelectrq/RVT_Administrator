@@ -10,7 +10,5 @@ namespace RVT_A_BusinessLayer.Interfaces
     public interface ITerminal
     {
         public  Task<RegistrationResponse> Registration(RegistrationMessage message);
-        public Task<AuthenticationResponse> Authentication(AuthenticationMessage message);
-        public Task<ChooserResponse> Vote(VoteMessage message);
     }
 }

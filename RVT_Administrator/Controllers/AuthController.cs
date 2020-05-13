@@ -25,22 +25,22 @@ namespace RVT_Administrator.Controllers
 
 
 
-        [HttpPost]
-        public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
-        {
+        //[HttpPost]
+        //public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
+        //{
 
-            if(string.IsNullOrEmpty(message.IDNP))
-            {
-                return BadRequest();
-            }
-            if(string.IsNullOrEmpty(message.VnPassword))
-            {
-                return BadRequest();
-            }
+        //    if(string.IsNullOrEmpty(message.IDNP))
+        //    {
+        //        return BadRequest();
+        //    }
+        //    if(string.IsNullOrEmpty(message.VnPassword))
+        //    {
+        //        return BadRequest();
+        //    }
 
-                var resp = await _terminal.Authentication(message);
-                return resp;
+        //        var resp = await _terminal.Authentication(message);
+        //        return resp;
               
-        }
+        //}
     }
 }

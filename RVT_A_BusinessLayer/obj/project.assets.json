@@ -1257,7 +1257,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "RVT_Block_lib": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RVT_A_DataLayer.dll": {}

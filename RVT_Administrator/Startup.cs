@@ -56,18 +56,7 @@ namespace RVT_Administrator
             options.UseSqlServer(Configuration.GetConnectionString("SFBD_accountContext")));
             services.AddControllers().AddNewtonsoftJson();
         }
-        private static byte[] StringToByteArray(string hex)
-        {
-            int NumberChars = hex.Length;
-            byte[] bytes = new byte[NumberChars / 2];
 
-            for (int i = 0; i < NumberChars; i += 2)
-            {
-                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
-            }
-
-            return bytes;
-        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

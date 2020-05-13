@@ -2570,7 +2570,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "RVT_Block_lib": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RVT_A_DataLayer.dll": {}
@@ -8297,7 +8298,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
       "RVT_A_BusinessLayer >= 1.0.0",
-      "RVT_A_DataLayer >= 1.0.0"
+      "RVT_A_DataLayer >= 1.0.0",
+      "RVT_Block_lib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8331,6 +8333,9 @@
             },
             "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
               "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+            },
+            "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+              "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
             }
           }
         }

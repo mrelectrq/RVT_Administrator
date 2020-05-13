@@ -17,7 +17,6 @@ namespace RVT_A_DataLayer.Entities
 
         public virtual DbSet<ConfirmAcc> ConfirmAcc { get; set; }
         public virtual DbSet<FiscData> FiscData { get; set; }
-        public virtual DbSet<IdRelations> IdRelations { get; set; }
         public virtual DbSet<IdvnAccounts> IdvnAccounts { get; set; }
         public virtual DbSet<RegionRelated> RegionRelated { get; set; }
         public virtual DbSet<VoteStatus> VoteStatus { get; set; }
@@ -27,7 +26,7 @@ namespace RVT_A_DataLayer.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-B3HCEB1;Database=SFBD_Accounts;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-GDI15RS\\SQLEXPRESS; Database=SFBD_Accounts;Trusted_Connection=True;");
             }
         }
 
@@ -95,29 +94,10 @@ namespace RVT_A_DataLayer.Entities
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<IdRelations>(entity =>
-            {
-                entity.HasKey(e => e.Idbd)
-                    .HasName("PK__ID_relat__B87DA8C3A36772B0");
-
-                entity.ToTable("ID_relations");
-
-                entity.Property(e => e.Idbd)
-                    .HasColumnName("IDBD")
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Idvn)
-                    .IsRequired()
-                    .HasColumnName("IDVN")
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<IdvnAccounts>(entity =>
             {
                 entity.HasKey(e => e.Idvn)
-                    .HasName("PK__idvn_acc__B87C0A4432663353");
+                    .HasName("PK__idvn_acc__B87C0A449F17E72C");
 
                 entity.ToTable("idvn_accounts");
 
@@ -126,14 +106,8 @@ namespace RVT_A_DataLayer.Entities
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.BirthYear).HasColumnName("Birth_Year");
-
                 entity.Property(e => e.Email)
                     .HasMaxLength(255)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Gender)
-                    .HasMaxLength(10)
                     .IsUnicode(false);
 
                 entity.Property(e => e.IpAddress)
@@ -144,11 +118,6 @@ namespace RVT_A_DataLayer.Entities
                 entity.Property(e => e.PhoneNumber)
                     .HasColumnName("Phone_Number")
                     .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.PublicSector)
-                    .HasColumnName("Public_Sector")
-                    .HasMaxLength(250)
                     .IsUnicode(false);
 
                 entity.Property(e => e.RegisterDate)

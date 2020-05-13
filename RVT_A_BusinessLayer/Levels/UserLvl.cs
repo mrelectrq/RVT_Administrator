@@ -11,19 +11,11 @@ namespace RVT_A_BusinessLayer.Levels
 {
     public class UserLvl : UserImplement, ITerminal
     {
-        public Task<AuthenticationResponse> Authentication(AuthenticationMessage message)
-        {
-            return Auth(message);
-        }
 
         public Task<RegistrationResponse> Registration(RegistrationMessage message)
         {
             return registerAction(message);
         }
 
-        public Task<ChooserResponse> Vote(VoteMessage message)
-        {
-            return VoteAsync(message);
-        }
     }
 }
