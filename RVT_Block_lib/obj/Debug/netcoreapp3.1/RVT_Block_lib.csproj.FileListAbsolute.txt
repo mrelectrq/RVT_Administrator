@@ -15,3 +15,4 @@ D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfo.cs
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csprojAssemblyReference.cache

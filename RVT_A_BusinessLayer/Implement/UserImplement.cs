@@ -77,7 +77,7 @@ namespace RVT_A_BusinessLayer.Implement
             }
             catch (AggregateException e)
             {
-                return new RegistrationResponse { Status = false, Message = "Eroare de conectare la server LB.1.0.1" };
+                return new RegistrationResponse { Status = false, Message = "Eroare de conectare la server LB.1.0.1"+e.Message };
             }
 
             if (regLbResponse.Status == true)
