@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RVT_A_DataLayer\RVT_A_DataLayer.csproj" />
     <ProjectReference Include="..\RVT_Block_lib\RVT_Block_lib.csproj" />
   </ItemGroup>

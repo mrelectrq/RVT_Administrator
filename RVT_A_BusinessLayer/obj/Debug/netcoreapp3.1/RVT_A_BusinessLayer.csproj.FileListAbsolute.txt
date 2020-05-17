@@ -20,9 +20,9 @@ D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_DataLayer.pdb
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csprojAssemblyReference.cache
-D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfoInputs.cache
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfo.cs
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
 D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+D:\C#_projects\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache

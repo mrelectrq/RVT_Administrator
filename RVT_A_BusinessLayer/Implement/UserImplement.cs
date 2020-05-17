@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
 using RVT_Block_lib;
@@ -64,7 +65,7 @@ namespace RVT_A_BusinessLayer.Implement
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             var client = new HttpClient(handler);
-            client.BaseAddress = new Uri("https://localhost:50627");
+            client.BaseAddress = new Uri("https://localhost:44322/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var response = await client.PostAsync("api/Regist", content);
@@ -73,7 +74,7 @@ namespace RVT_A_BusinessLayer.Implement
             try
             {
                 var data_resp = await response.Content.ReadAsStringAsync();
-                regLbResponse = RegLbResponse.Deserialize(data_resp);
+                regLbResponse = JsonConvert.DeserializeObject<RegLbResponse>(data_resp);
             }
             catch (AggregateException e)
             {

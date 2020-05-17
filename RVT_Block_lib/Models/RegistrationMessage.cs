@@ -37,6 +37,7 @@ namespace RVT_Block_lib.Models
         public string Serialize()
         {
             var jsonSerializer = new DataContractJsonSerializer(typeof(RegistrationMessage));
+            
             using (var ms = new MemoryStream())
             {
                 jsonSerializer.WriteObject(ms, this);

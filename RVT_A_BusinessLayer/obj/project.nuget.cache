@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2qYPZKQ0hdGfeGiB8W+bII2GGQG5LPEeeqeEJwu+CgAl1sBpzJWJaRyRWpCkrHkRq02xf/ONX9kfiw1n/eRRNQ==",
+  "dgSpecHash": "ymHUjYtlSKVIr9WsY6Vu6RyUJFKUbd5cstY7cTj+Nw4SAvSjikYuS2eTmrhkm/VpybDHGsPd7BiMZuR8NL86uw==",
   "success": true,
   "projectFilePath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
