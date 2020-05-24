@@ -16,6 +16,10 @@ namespace RVT_A_BusinessLayer.Levels
         {
             return registerAction(message);
         }
+        public Task<AuthenticationResponse> Auth(AuthenticationMessage message)
+        {
+            return AuthAction(message);
+        }
 
     }
 }

@@ -16,3 +16,12 @@ D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
 D:\C#_projects\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csprojAssemblyReference.cache
+D:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.deps.json
+D:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.dll
+D:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csproj.CoreCompileInputs.cache
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfoInputs.cache
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfo.cs
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csprojAssemblyReference.cache

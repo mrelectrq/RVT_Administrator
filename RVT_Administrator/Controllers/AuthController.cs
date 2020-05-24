@@ -23,24 +23,22 @@ namespace RVT_Administrator.Controllers
             _terminal = bl.GetTerminal();
         }
 
+        [HttpPost]
+        public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
+        {
 
+            if (string.IsNullOrEmpty(message.IDNP))
+            {
+                return BadRequest();
+            }
+            if (string.IsNullOrEmpty(message.VnPassword))
+            {
+                return BadRequest();
+            }
 
-        //[HttpPost]
-        //public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
-        //{
+            var resp = await _terminal.Auth(message);
+            return resp;
 
-        //    if(string.IsNullOrEmpty(message.IDNP))
-        //    {
-        //        return BadRequest();
-        //    }
-        //    if(string.IsNullOrEmpty(message.VnPassword))
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //        var resp = await _terminal.Authentication(message);
-        //        return resp;
-              
-        //}
+        }
     }
 }

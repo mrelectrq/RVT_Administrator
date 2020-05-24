@@ -59,7 +59,6 @@ namespace RVT_A_BusinessLayer.Implement
 
             }
 
-
             // To LOADBALANCER
             var content = new StringContent(data.Serialize(), Encoding.UTF8, "application/json");
             var handler = new HttpClientHandler();
@@ -101,6 +100,25 @@ namespace RVT_A_BusinessLayer.Implement
                 return new RegistrationResponse { Status = true, ConfirmKey = random.Next(12452, 87620).ToString(), Message = "Registered", IDVN = regLbResponse.IDVN, Email = data.Email };
             }
             else return new RegistrationResponse { Status = false, Message = "Eroare de inregistrare" };
+        }
+        internal async Task<AuthenticationResponse> AuthAction(AuthenticationMessage data)
+        {
+            var idvn= IDVN_Gen.HashGen(data.VnPassword + data.IDNP);
+            using (var db = new SFBD_AccountsContext())
+            {
+                var verif = db.IdvnAccounts.FirstOrDefault(x =>
+               x.Idvn == idvn &&
+               x.VnPassword == data.VnPassword);
+
+                if (verif == null)
+                {
+                    return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
+                }
+
+            }
+
+            return new AuthenticationResponse { Status = true,IDVN=idvn,Message= "Authenticated." };
+
         }
     }
 }
