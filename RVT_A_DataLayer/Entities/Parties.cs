@@ -7,12 +7,12 @@ namespace RVT_A_DataLayer.Entities
     {
         public Parties()
         {
-            Votes = new HashSet<Votes>();
+            Blocks = new HashSet<Blocks>();
         }
 
         public int Idpart { get; set; }
         public string Party { get; set; }
 
-        public virtual ICollection<Votes> Votes { get; set; }
+        public virtual ICollection<Blocks> Blocks { get; set; }
     }
 }

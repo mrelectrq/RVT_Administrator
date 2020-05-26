@@ -20,7 +20,7 @@ namespace RVT_Administrator.Controllers
 
         public RegisterController()
         {
-            var bl = new BusinessManager();
+           var bl = new BusinessManager();
             terminal = bl.GetTerminal();
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YhxmP6lwpXr5uxJj1j7HxRDHrlvPJQi89lPk+C5vdskusJm8wdQfIEZlH1OAFGzMwNiy6xAgq+fSSff1MDUWQg==",
+  "dgSpecHash": "j/dWX3vi71XgjYOPVS454Sb8fXST/KKvRLwIsJMpOiEAm07gahyzuYjFdYC00f1qdAU7iW1hzBoPqJ9szQ4W5w==",
   "success": true,
-  "projectFilePath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+  "projectFilePath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

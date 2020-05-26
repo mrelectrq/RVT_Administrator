@@ -2,6 +2,7 @@
 using RVT_A_BusinessLayer.Interfaces;
 using RVT_A_BusinessLayer.Responses;
 using RVT_Block_lib.Models;
+using RVT_Block_lib.Requests;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,5 +22,9 @@ namespace RVT_A_BusinessLayer.Levels
             return AuthAction(message);
         }
 
+        public VoteAdminResponse Vote(VoteAdminMessage message)
+        {
+            return VoteAction(message).Result;
+        }
     }
 }

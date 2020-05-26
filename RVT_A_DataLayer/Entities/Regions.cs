@@ -7,12 +7,12 @@ namespace RVT_A_DataLayer.Entities
     {
         public Regions()
         {
-            Votes = new HashSet<Votes>();
+            Blocks = new HashSet<Blocks>();
         }
 
         public int Idreg { get; set; }
-        public int Region { get; set; }
+        public string Region { get; set; }
 
-        public virtual ICollection<Votes> Votes { get; set; }
+        public virtual ICollection<Blocks> Blocks { get; set; }
     }
 }

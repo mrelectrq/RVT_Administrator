@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using Newtonsoft.Json;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
 using RVT_Block_lib;
 using RVT_Block_lib.Algoritms;
 using RVT_Block_lib.Models;
+using RVT_Block_lib.Requests;
 using RVTLibrary.Models;
 using RVTLibrary.Responses;
 using System;
@@ -50,7 +52,7 @@ namespace RVT_A_BusinessLayer.Implement
                         return new RegistrationResponse { Status = false, Message = "Datele introduse sunt gresite" };
                     }
                 }
-                catch(AggregateException)
+                catch (AggregateException)
                 {
 
                 }
@@ -77,7 +79,7 @@ namespace RVT_A_BusinessLayer.Implement
             }
             catch (AggregateException e)
             {
-                return new RegistrationResponse { Status = false, Message = "Eroare de conectare la server LB.1.0.1"+e.Message };
+                return new RegistrationResponse { Status = false, Message = "Eroare de conectare la server LB.1.0.1" + e.Message };
             }
 
             if (regLbResponse.Status == true)
@@ -103,7 +105,7 @@ namespace RVT_A_BusinessLayer.Implement
         }
         internal async Task<AuthenticationResponse> AuthAction(AuthenticationMessage data)
         {
-            var idvn= IDVN_Gen.HashGen(data.VnPassword + data.IDNP);
+            var idvn = IDVN_Gen.HashGen(data.VnPassword + data.IDNP);
             using (var db = new SFBD_AccountsContext())
             {
                 var verif = db.IdvnAccounts.FirstOrDefault(x =>
@@ -117,8 +119,120 @@ namespace RVT_A_BusinessLayer.Implement
 
             }
 
-            return new AuthenticationResponse { Status = true,IDVN=idvn,Message= "Authenticated." };
+            return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authenticated." };
 
+        }
+
+
+        internal async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
+        {
+
+            var idvn = IDVN_Gen.HashGen(message.VnPassword + message.IDNP);
+
+
+            using (var bd = new SFBD_AccountsContext())
+            {
+                var account = bd.IdvnAccounts.FirstOrDefault(m => m.Idvn == idvn);
+                if (account == null)
+                {
+                    return new VoteAdminResponse
+                    {
+                        VoteStatus = false,
+                        Message = "Credentialele sunt introduse incorect",
+                        ProcessedTime = DateTime.Now
+                    };
+                }
+                else if (account.StatusNumber == "Non Confirmed")
+                {
+                    return new VoteAdminResponse
+                    {
+                        VoteStatus = false,
+                        Message = "Accountul nu este activat, va rugam sa il activati",
+                        ProcessedTime = DateTime.Now
+                    };
+                }
+
+                var vote_state = bd.VoteStatus.FirstOrDefault(m => m.Idvn == idvn);
+                if (vote_state != null)
+                    return new VoteAdminResponse
+                    {
+                        VoteStatus = false,
+                        Message = "Procesul de votare este deja efectuat, nu puteti vota dublu",
+                        ProcessedTime = DateTime.Now
+                    };
+                var fiscData = bd.FiscData.FirstOrDefault(m => m.Idnp == message.IDNP);
+                if (fiscData==null)
+                    return new VoteAdminResponse
+                    {
+                        VoteStatus = false,
+                        Message = "Eroare de identificare identitatii. Contactati suportul tehnic",
+                        ProcessedTime = DateTime.Now
+                    };
+
+                var party = bd.Parties.FirstOrDefault(m => m.Party == message.Party);
+                var region = bd.Regions.FirstOrDefault(m => m.Region == fiscData.Region);
+
+                var chooser = new ChooserLbMessage();
+                chooser.Email = account.Email;
+                chooser.Gender = fiscData.Gender;
+                chooser.Name = fiscData.Name;
+                chooser.Surname = fiscData.Surname;
+                chooser.Region = region.Idreg;
+                chooser.Vote_date = DateTime.Now;
+                chooser.PartyChoosed = party.Idpart;
+                chooser.IDVN = idvn;
+                chooser.Phone_Number = account.PhoneNumber;
+                chooser.Birth_date = fiscData.BirthDate;
+                chooser.IDNP = fiscData.Idnp;
+
+                var content = new StringContent(JsonConvert.SerializeObject(chooser), Encoding.UTF8, "application/json");
+                var handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                var client = new HttpClient(handler);
+                client.BaseAddress = new Uri("https://localhost:44322/");
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = client.PostAsync("api/Vote", content);
+
+                var regLbResponse = new VoteLbResponse();
+                try
+                {
+                    var data_resp = await response.Result.Content.ReadAsStringAsync();
+                    regLbResponse = JsonConvert.DeserializeObject<VoteLbResponse>(data_resp);
+                }
+                catch (AggregateException e)
+                {
+                    return new VoteAdminResponse { VoteStatus = false, Message = "Eroare de conectare la server LB.1.0.1" + e.Message };
+                }
+
+                if(regLbResponse.Status==false)
+                {
+                    return new VoteAdminResponse { VoteStatus = false, Message = regLbResponse.Message, ProcessedTime = regLbResponse.ProcessedTime };
+                }
+
+                var block = regLbResponse.block;
+                var datablock = new Blocks();
+               // datablock.BlockId = block.BlockId;
+                datablock.CreatedOn = block.CreatedOn;
+                datablock.Gender = block.Gender;
+                datablock.Hash = block.Hash;
+                datablock.PartyChoosed = block.PartyChoosed;
+                datablock.PreviousHash = block.PreviousHash;
+                datablock.YearBirth = block.YearToBirth;
+                datablock.RegionChoosed = block.RegionChoosed;
+                bd.Add(datablock);
+
+
+
+                var vote_status = new VoteStatus();
+                vote_status.Idvn = idvn;
+                vote_status.VoteState = "Confirmed";
+                bd.Add(vote_status);
+                bd.SaveChanges();
+                return new VoteAdminResponse { VoteStatus = true, ProcessedTime = DateTime.Now, Message = "Voted" };
+
+            }
+            
         }
     }
 }

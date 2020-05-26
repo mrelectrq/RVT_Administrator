@@ -15,25 +15,61 @@ namespace RVT_A_DataLayer.Entities
         {
         }
 
+        public virtual DbSet<Blocks> Blocks { get; set; }
         public virtual DbSet<ConfirmAcc> ConfirmAcc { get; set; }
         public virtual DbSet<FiscData> FiscData { get; set; }
         public virtual DbSet<IdvnAccounts> IdvnAccounts { get; set; }
         public virtual DbSet<Parties> Parties { get; set; }
         public virtual DbSet<Regions> Regions { get; set; }
         public virtual DbSet<VoteStatus> VoteStatus { get; set; }
-        public virtual DbSet<Votes> Votes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=WINDOWS-NTDD448;Database=SFBD_Accounts;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-GDI15RS\\SQLEXPRESS; Database=SFBD_Accounts;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Blocks>(entity =>
+            {
+                entity.HasKey(e => e.BlockId);
+
+                entity.Property(e => e.BlockId).HasColumnName("BlockID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.Gender)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Hash)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PreviousHash)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.PartyChoosedNavigation)
+                    .WithMany(p => p.Blocks)
+                    .HasForeignKey(d => d.PartyChoosed)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Blocks_Parties");
+
+                entity.HasOne(d => d.RegionChoosedNavigation)
+                    .WithMany(p => p.Blocks)
+                    .HasForeignKey(d => d.RegionChoosed)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Blocks_Regions");
+            });
+
             modelBuilder.Entity<ConfirmAcc>(entity =>
             {
                 entity.HasKey(e => e.Idvn)
@@ -154,6 +190,10 @@ namespace RVT_A_DataLayer.Entities
                 entity.HasKey(e => e.Idreg);
 
                 entity.Property(e => e.Idreg).HasColumnName("IDReg");
+
+                entity.Property(e => e.Region)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<VoteStatus>(entity =>
@@ -169,25 +209,6 @@ namespace RVT_A_DataLayer.Entities
                 entity.Property(e => e.VoteState)
                     .HasMaxLength(255)
                     .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<Votes>(entity =>
-            {
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.PartyChoosed).HasColumnName("Party_Choosed");
-
-                entity.HasOne(d => d.PartyChoosedNavigation)
-                    .WithMany(p => p.Votes)
-                    .HasForeignKey(d => d.PartyChoosed)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Votes_Parties");
-
-                entity.HasOne(d => d.RegionNavigation)
-                    .WithMany(p => p.Votes)
-                    .HasForeignKey(d => d.Region)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Votes_Regions");
             });
 
             OnModelCreatingPartial(modelBuilder);
