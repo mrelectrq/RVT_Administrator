@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#_projects\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {}
+    "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {}
   },
   "projects": {
-    "D:\\C#_projects\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {
+    "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#_projects\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
         "projectName": "RVT_AdministratorTests",
-        "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\C#_projects\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
+        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
               },
-              "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -84,17 +84,17 @@
         }
       }
     },
-    "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
+    "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
+        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
         "projectName": "RVT_Administrator",
-        "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Administrator\\obj\\",
+        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,14 +107,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj"
               },
-              "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
               },
-              "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -128,23 +128,27 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.3, )"
             }
           },
           "imports": [
@@ -169,17 +173,17 @@
         }
       }
     },
-    "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
+    "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
         "projectName": "RVT_A_BusinessLayer",
-        "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
+        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -192,11 +196,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
               },
-              "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -234,17 +238,17 @@
         }
       }
     },
-    "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+    "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
         "projectName": "RVT_A_DataLayer",
-        "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\C#_projects\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
+        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -257,8 +261,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -272,6 +276,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -302,17 +310,17 @@
         }
       }
     },
-    "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+    "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
         "projectName": "RVT_Block_lib",
-        "projectPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\C#_projects\\RVT_Administrator\\RVT_Block_lib\\obj\\",
+        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

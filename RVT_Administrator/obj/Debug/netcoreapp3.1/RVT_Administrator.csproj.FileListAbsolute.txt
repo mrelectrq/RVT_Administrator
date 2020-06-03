@@ -400,3 +400,14 @@ D:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\staticwebasse
 D:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.dll
 D:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.pdb
 D:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.genruntimeconfig.cache
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\EntityFramework.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+D:\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll

@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace RVT_A_DataLayer.Entities
 {
-    public partial class SFBD_AccountsContext : DbContext
+    public partial class SFBD_AccountsContext : IdentityDbContext
     {
         public SFBD_AccountsContext()
         {
