@@ -17,41 +17,24 @@ namespace RVT_Administrator.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ITerminal _terminal;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public AuthController(UserManager<IdentityUser> userManager,SignInManager<IdentityUser> signInManager)
+        public AuthController()
         {
             var bl = new BusinessManager();
             _terminal = bl.GetTerminal();
-            _userManager = userManager;
-            _signInManager = signInManager;
         }
 
         [HttpPost]
         public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
         {
-            var user = await _userManager.FindByNameAsync(message.IDNP);
-
-                if (user!=null)
+            if (ModelState.IsValid)
             {
-                var signInResult= await _signInManager.PasswordSignInAsync(message.IDNP, message.VnPassword, false, false);
-                if (signInResult.Succeeded)
-                    RedirectToAction("Index", "Home");
+                var resp = await _terminal.Auth(message);
+                return resp;
             }
             else
-            {
-                BadRequest();
-            }
-
-            var resp = await _terminal.Auth(message);
-            return resp;
-
+                return BadRequest();
         }
-        public async Task<IActionResult> LogOut()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+
     }
 }

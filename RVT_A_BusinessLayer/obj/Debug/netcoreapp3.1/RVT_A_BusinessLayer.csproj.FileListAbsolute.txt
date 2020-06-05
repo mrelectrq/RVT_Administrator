@@ -40,3 +40,17 @@ D:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_Busin
 D:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
 D:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
 D:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.deps.json
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_DataLayer.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_Block_lib.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_DataLayer.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfo.cs
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {}
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {}
   },
   "projects": {
-    "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+        "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
         "projectName": "RVT_AdministratorTests",
-        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
+        "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,11 +30,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
               },
-              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -72,6 +75,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -80,21 +89,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
+        "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
         "projectName": "RVT_Administrator",
-        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\obj\\",
+        "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj",
+        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,14 +119,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj"
               },
-              "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
               },
-              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -161,6 +173,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -169,21 +187,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
         "projectName": "RVT_A_BusinessLayer",
-        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -196,11 +217,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
               },
-              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -229,26 +250,35 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
         "projectName": "RVT_A_DataLayer",
-        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -261,8 +291,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -301,26 +331,35 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+    "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
         "projectName": "RVT_Block_lib",
-        "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\obj\\",
+        "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -353,12 +392,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace RVT_A_DataLayer.Entities
 {
-    public partial class SFBD_AccountsContext : IdentityDbContext
+    public partial class SFBD_AccountsContext : DbContext
     {
         public SFBD_AccountsContext()
         {
@@ -29,7 +29,7 @@ namespace RVT_A_DataLayer.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-GDI15RS\\SQLEXPRESS; Database=SFBD_Accounts;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-5VAJ4Q7;Database=SFBD_Accounts;Trusted_Connection=True;");
             }
         }
 
@@ -74,7 +74,7 @@ namespace RVT_A_DataLayer.Entities
             modelBuilder.Entity<ConfirmAcc>(entity =>
             {
                 entity.HasKey(e => e.Idvn)
-                    .HasName("PK__confirm___9DBB34166C8F4440");
+                    .HasName("PK__confirm___9DBB341604AA8E83");
 
                 entity.ToTable("confirm_acc");
 
@@ -136,7 +136,7 @@ namespace RVT_A_DataLayer.Entities
             modelBuilder.Entity<IdvnAccounts>(entity =>
             {
                 entity.HasKey(e => e.Idvn)
-                    .HasName("PK__idvn_acc__B87C0A442D77B05D");
+                    .HasName("PK__idvn_acc__B87C0A44C2B6E307");
 
                 entity.ToTable("idvn_accounts");
 
@@ -200,7 +200,7 @@ namespace RVT_A_DataLayer.Entities
             modelBuilder.Entity<VoteStatus>(entity =>
             {
                 entity.HasKey(e => e.Idvn)
-                    .HasName("PK__VoteStat__B87C0A443DAA6419");
+                    .HasName("PK__VoteStat__B87C0A44C628F5FC");
 
                 entity.Property(e => e.Idvn)
                     .HasColumnName("IDVN")

@@ -116,7 +116,6 @@ namespace RVT_A_BusinessLayer.Implement
                 {
                     return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
                 }
-
             }
 
             return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authenticated." };

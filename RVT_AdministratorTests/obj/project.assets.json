@@ -6026,6 +6026,7 @@
       "path": "system.composition.convention/1.0.31",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.Convention.dll",
@@ -6068,6 +6069,7 @@
       "path": "system.composition.typedparts/1.0.31",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.TypedParts.dll",
@@ -9853,19 +9855,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Artyrik\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+      "projectUniqueName": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
       "projectName": "RVT_AdministratorTests",
-      "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
+      "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\RVT_AdministratorTests.csproj",
+      "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_AdministratorTests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9878,11 +9884,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
-              "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
+            "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj": {
+              "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Administrator\\RVT_Administrator.csproj"
             },
-            "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-              "projectPath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+            "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+              "projectPath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
             }
           }
         }
@@ -9923,6 +9929,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.2, 3.1.2]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9931,7 +9943,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -29,9 +29,9 @@ namespace RVT_Administrator
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<SFBD_AccountsContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<SFBD_AccountsContext>()
+            //    .AddDefaultTokenProviders();
             //services.AddCertificateForwarding(options =>
             //{
             //    options.CertificateHeader = "X-SSL-CERT";
@@ -78,7 +78,6 @@ namespace RVT_Administrator
            /// app.UseCertificateForwarding();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

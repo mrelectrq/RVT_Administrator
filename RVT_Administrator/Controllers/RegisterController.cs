@@ -28,11 +28,8 @@ namespace RVT_Administrator.Controllers
         [HttpPost]
         public async Task<ActionResult<RegistrationResponse>> RegAct([FromBody]RegistrationMessage message)
         {
-            //string test = message;
             if (ModelState.IsValid)
             {
-               // var request = RegistrationMessage.Deserialize(message);
-
                 var result = await terminal.Registration(message);
 
                 return result;

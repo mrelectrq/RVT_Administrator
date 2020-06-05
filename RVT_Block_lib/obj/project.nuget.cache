@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YhxmP6lwpXr5uxJj1j7HxRDHrlvPJQi89lPk+C5vdskusJm8wdQfIEZlH1OAFGzMwNiy6xAgq+fSSff1MDUWQg==",
+  "dgSpecHash": "+X59oRAL7A/ASHa/xW8whiJ6GFZ2u+Rctv0kLTcZ6zwKtGq+QhCFLbG5GC9k+Cwst/Sful3IYTE3bgXUKCb/2Q==",
   "success": true,
-  "projectFilePath": "D:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Artyrik\\OneDrive - Technical University of Moldova\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Artyrik\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

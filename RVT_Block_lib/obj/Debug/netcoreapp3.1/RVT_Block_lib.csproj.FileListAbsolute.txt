@@ -25,3 +25,12 @@ D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.Ass
 D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfo.cs
 D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
 D:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.deps.json
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csprojAssemblyReference.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfoInputs.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfo.cs
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csproj.CoreCompileInputs.cache
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
+C:\Users\Artyrik\OneDrive - Technical University of Moldova\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
