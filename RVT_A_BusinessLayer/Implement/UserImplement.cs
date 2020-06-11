@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,6 +85,14 @@ namespace RVT_A_BusinessLayer.Implement
 
             if (regLbResponse.Status == true)
             {
+                var authclaims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name,data.IDNP),
+                };
+                var authIdentity = new ClaimsIdentity(authclaims, "User Identity");
+
+                var userPrincipal = new ClaimsPrincipal(new[] { authIdentity });
+
                 using (var db = new SFBD_AccountsContext())
                 {
                     var account = new IdvnAccounts();
@@ -98,6 +107,7 @@ namespace RVT_A_BusinessLayer.Implement
                     db.SaveChanges();
 
                 }
+
                 var random = new Random();
                 return new RegistrationResponse { Status = true, ConfirmKey = random.Next(12452, 87620).ToString(), Message = "Registered", IDVN = regLbResponse.IDVN, Email = data.Email };
             }
@@ -168,7 +178,7 @@ namespace RVT_A_BusinessLayer.Implement
                         ProcessedTime = DateTime.Now
                     };
 
-                var party = bd.Parties.FirstOrDefault(m => m.Party == message.Party);
+                var party = bd.Parties.FirstOrDefault(m => m.Idpart.ToString() == message.Party);
                 var region = bd.Regions.FirstOrDefault(m => m.Region == fiscData.Region);
 
                 var chooser = new ChooserLbMessage();
