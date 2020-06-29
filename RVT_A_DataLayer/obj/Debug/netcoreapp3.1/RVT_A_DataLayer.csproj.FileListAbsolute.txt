@@ -68,8 +68,8 @@ C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\bin\Debug\netcore
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.csprojAssemblyReference.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.AssemblyInfoInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.AssemblyInfo.cs
-C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.csproj.CopyComplete
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.pdb
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.genruntimeconfig.cache
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_DataLayer\obj\Debug\netcoreapp3.1\RVT_A_DataLayer.csproj.CoreCompileInputs.cache

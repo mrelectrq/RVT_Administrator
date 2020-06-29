@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RVT_Block_lib", "..\RVT_Blo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RVT_A_BusinessLayer", "..\RVT_A_BusinessLayer\RVT_A_BusinessLayer.csproj", "{5CFA6710-5012-4A67-B77C-582D24FA091B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RVT_AdministratorTests", "..\RVT_AdministratorTests\RVT_AdministratorTests.csproj", "{65ED69B9-E8F0-466C-837E-A880C449C671}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{5CFA6710-5012-4A67-B77C-582D24FA091B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CFA6710-5012-4A67-B77C-582D24FA091B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CFA6710-5012-4A67-B77C-582D24FA091B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65ED69B9-E8F0-466C-837E-A880C449C671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65ED69B9-E8F0-466C-837E-A880C449C671}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65ED69B9-E8F0-466C-837E-A880C449C671}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65ED69B9-E8F0-466C-837E-A880C449C671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

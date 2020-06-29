@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -50,25 +49,13 @@ namespace RVT_A_DataLayer.Entities
 
                 entity.Property(e => e.Hash)
                     .IsRequired()
-                    .HasMaxLength(255)
+                    .HasMaxLength(5000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PreviousHash)
                     .IsRequired()
-                    .HasMaxLength(255)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.PartyChoosedNavigation)
-                    .WithMany(p => p.Blocks)
-                    .HasForeignKey(d => d.PartyChoosed)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Blocks_Parties");
-
-                entity.HasOne(d => d.RegionChoosedNavigation)
-                    .WithMany(p => p.Blocks)
-                    .HasForeignKey(d => d.RegionChoosed)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Blocks_Regions");
             });
 
             modelBuilder.Entity<ConfirmAcc>(entity =>

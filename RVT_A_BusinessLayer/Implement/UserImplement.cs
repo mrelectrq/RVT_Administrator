@@ -12,11 +12,14 @@ using RVTLibrary.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using RVT_A_BusinessLayer.Helpers;
 
 namespace RVT_A_BusinessLayer.Implement
 {
@@ -92,12 +95,26 @@ namespace RVT_A_BusinessLayer.Implement
                 var authIdentity = new ClaimsIdentity(authclaims, "User Identity");
 
                 var userPrincipal = new ClaimsPrincipal(new[] { authIdentity });
-
+                ///-------SMTP SEND EMAIL WITH PASSWORD------
+                // Who send?
+                MailAddress From = new MailAddress("rvtvote@gmail.com", "RVT Vote");
+                string utilizator = "rvtvote@gmail.com";
+                string password = "Ialoveni1";
+                // where to send?
+                MailAddress To = new MailAddress(data.Email);
+                MailMessage msg = new MailMessage(From, To);
+                msg.Subject = "Registration - RVT";
+                msg.Body = "Registration Code - " + regLbResponse.VnPassword;
+                msg.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new NetworkCredential(utilizator, password);
+                smtp.EnableSsl = true;
+                smtp.Send(msg);
                 using (var db = new SFBD_AccountsContext())
                 {
                     var account = new IdvnAccounts();
                     account.Idvn = regLbResponse.IDVN;
-                    account.VnPassword = regLbResponse.VnPassword;
+                    account.VnPassword = LoginHelper.HashGen(regLbResponse.VnPassword);
                     account.StatusNumber = "Non confirmed";
                     account.IpAddress = data.Ip_address;
                     account.PhoneNumber = data.Phone_Number;
@@ -115,12 +132,13 @@ namespace RVT_A_BusinessLayer.Implement
         }
         internal async Task<AuthenticationResponse> AuthAction(AuthenticationMessage data)
         {
+            var pass = LoginHelper.HashGen(data.VnPassword);
             var idvn = IDVN_Gen.HashGen(data.VnPassword + data.IDNP);
             using (var db = new SFBD_AccountsContext())
             {
                 var verif = db.IdvnAccounts.FirstOrDefault(x =>
                x.Idvn == idvn &&
-               x.VnPassword == data.VnPassword);
+               x.VnPassword == pass);
 
                 if (verif == null)
                 {
@@ -133,7 +151,7 @@ namespace RVT_A_BusinessLayer.Implement
         }
 
 
-        internal async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
+        public async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
         {
 
             var idvn = IDVN_Gen.HashGen(message.VnPassword + message.IDNP);
