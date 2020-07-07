@@ -26,5 +26,10 @@ namespace RVT_A_BusinessLayer.Levels
         {
             return VoteAction(message).Result;
         }
+
+        public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote)
+        {
+            return VoteStatusAction(vote);
+        }
     }
 }

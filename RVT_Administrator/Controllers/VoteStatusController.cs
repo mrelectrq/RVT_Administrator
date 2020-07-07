@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RVT_A_BusinessLayer;
 using RVT_A_BusinessLayer.Interfaces;
+using RVT_A_BusinessLayer.Responses;
 using RVT_Block_lib.Models;
 using RVT_Block_lib.Requests;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace RVT_Administrator.Controllers
 {
     [Route("api/[controller]")]
-    public class VoteController : Controller
+    [ApiController]
+    public class VoteStatusController : ControllerBase
     {
         private readonly ITerminal _terminal;
 
-        public VoteController()
+        public VoteStatusController()
         {
             var bl = new BusinessManager();
             _terminal = bl.GetTerminal();
@@ -25,11 +26,15 @@ namespace RVT_Administrator.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<VoteAdminResponse>> Vote([FromBody] VoteAdminMessage message)
+        public async Task<ActionResult<VoteStatusResponse>> VoteStatus([FromBody] VoteStatusMessage message)
         {
-            var response = _terminal.Vote(message);
-
-            return response;
+            if (ModelState.IsValid)
+            {
+                var response = await _terminal.VoteStatus(message);
+                return response;
+            }
+            else 
+                return BadRequest();
         }
     }
 }

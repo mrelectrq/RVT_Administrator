@@ -13,5 +13,6 @@ namespace RVT_A_BusinessLayer.Interfaces
         public  Task<RegistrationResponse> Registration(RegistrationMessage message);
         public  Task<AuthenticationResponse> Auth(AuthenticationMessage message);
         public VoteAdminResponse Vote(VoteAdminMessage message);
+        public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote);
     }
 }

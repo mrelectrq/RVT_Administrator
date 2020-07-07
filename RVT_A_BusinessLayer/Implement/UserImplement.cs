@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using Newtonsoft.Json;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
-using RVT_Block_lib;
 using RVT_Block_lib.Algoritms;
 using RVT_Block_lib.Models;
 using RVT_Block_lib.Requests;
-using RVTLibrary.Models;
 using RVTLibrary.Responses;
 using System;
 using System.Collections.Generic;
@@ -16,9 +13,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Mail;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
+using Microsoft.EntityFrameworkCore.Query;
+using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Helpers;
 
 namespace RVT_A_BusinessLayer.Implement
@@ -27,7 +26,6 @@ namespace RVT_A_BusinessLayer.Implement
     {
         internal async Task<RegistrationResponse> registerAction(RegistrationMessage data)
         {
-            //fnv1a32
             var fiscData = new FiscData();
             fiscData.Idnp = data.IDNP;
             fiscData.Name = data.Name;
@@ -46,22 +44,16 @@ namespace RVT_A_BusinessLayer.Implement
                x.Region.Contains(fiscData.Region) &&
                x.Surname == fiscData.Surname &&
                x.Name == fiscData.Name &&
-               //x.BirthDate.Value.Year == fiscData.BirthDate.Value.Year &&
-               //x.BirthDate.Value.Month == fiscData.BirthDate.Value.Month &&
-               //x.BirthDate.Value.Day == fiscData.BirthDate.Value.Day
                x.BirthDate == fiscData.BirthDate
-               );// o gasit in baza de date fiscala, si transmite spre loadbalancer
+               );
                     if (fisc == null)
-                    {// o gasit in baza de date fiscala asa persoana si deja se transmite la LB 
+                    {
                         return new RegistrationResponse { Status = false, Message = "Datele introduse sunt gresite" };
                     }
                 }
                 catch (AggregateException)
                 {
-
                 }
-
-
 
             }
 
@@ -88,13 +80,6 @@ namespace RVT_A_BusinessLayer.Implement
 
             if (regLbResponse.Status == true)
             {
-                var authclaims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Name,data.IDNP),
-                };
-                var authIdentity = new ClaimsIdentity(authclaims, "User Identity");
-
-                var userPrincipal = new ClaimsPrincipal(new[] { authIdentity });
                 ///-------SMTP SEND EMAIL WITH PASSWORD------
                 // Who send?
                 MailAddress From = new MailAddress("rvtvote@gmail.com", "RVT Vote");
@@ -149,9 +134,7 @@ namespace RVT_A_BusinessLayer.Implement
             return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authenticated." };
 
         }
-
-
-        public async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
+        internal async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
         {
 
             var idvn = IDVN_Gen.HashGen(message.VnPassword + message.IDNP);
@@ -251,7 +234,7 @@ namespace RVT_A_BusinessLayer.Implement
 
 
 
-                var vote_status = new VoteStatus();
+                var vote_status = new RVT_A_DataLayer.Entities.VoteStatus();
                 vote_status.Idvn = idvn;
                 vote_status.VoteState = "Confirmed";
                 bd.Add(vote_status);
@@ -259,8 +242,34 @@ namespace RVT_A_BusinessLayer.Implement
                 return new VoteAdminResponse { VoteStatus = true, ProcessedTime = DateTime.Now, Message = "Voted" };
 
             }
-            
         }
+
+        internal async Task<VoteStatusResponse> VoteStatusAction(VoteStatusMessage vote)
+        {
+            List<VoteStatistics> parties = new List<VoteStatistics>();
+            
+            using (var context = new SFBD_AccountsContext())
+            {
+                //-----------------Number of parties to count------------------
+                for (int i = 1; i <=5; i++)
+                {
+                    var party = new VoteStatistics();
+                    party.IDParty = i;
+                    party.Votes = (from st in context.Blocks
+                        where st.PartyChoosed == party.IDParty
+                        select st).Count();
+                    parties.Add(party);
+
+                }
+
+            }
+
+            return new VoteStatusResponse
+            {
+                Time = DateTime.Now, TotalVotes = parties
+            };
+        }
+
     }
 }
 
