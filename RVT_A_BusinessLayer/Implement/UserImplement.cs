@@ -129,6 +129,10 @@ namespace RVT_A_BusinessLayer.Implement
                 {
                     return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
                 }
+                else
+                {
+
+                }
             }
 
             return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authenticated." };
@@ -143,24 +147,24 @@ namespace RVT_A_BusinessLayer.Implement
             using (var bd = new SFBD_AccountsContext())
             {
                 var account = bd.IdvnAccounts.FirstOrDefault(m => m.Idvn == idvn);
-                if (account == null)
-                {
-                    return new VoteAdminResponse
-                    {
-                        VoteStatus = false,
-                        Message = "Credentialele sunt introduse incorect",
-                        ProcessedTime = DateTime.Now
-                    };
-                }
-                else if (account.StatusNumber == "Non Confirmed")
-                {
-                    return new VoteAdminResponse
-                    {
-                        VoteStatus = false,
-                        Message = "Accountul nu este activat, va rugam sa il activati",
-                        ProcessedTime = DateTime.Now
-                    };
-                }
+                //if (account == null)
+                //{
+                //    return new VoteAdminResponse
+                //    {
+                //        VoteStatus = false,
+                //        Message = "Credentialele sunt introduse incorect",
+                //        ProcessedTime = DateTime.Now
+                //    };
+                //}
+                //else if (account.StatusNumber == "Non Confirmed")
+                //{
+                //    return new VoteAdminResponse
+                //    {
+                //        VoteStatus = false,
+                //        Message = "Accountul nu este activat, va rugam sa il activati",
+                //        ProcessedTime = DateTime.Now
+                //    };
+                //}
 
                 var vote_state = bd.VoteStatus.FirstOrDefault(m => m.Idvn == idvn);
                 if (vote_state != null)
@@ -247,9 +251,12 @@ namespace RVT_A_BusinessLayer.Implement
         internal async Task<VoteStatusResponse> VoteStatusAction(VoteStatusMessage vote)
         {
             List<VoteStatistics> parties = new List<VoteStatistics>();
-            
+            int votants = 0;
+            int population = 0;
             using (var context = new SFBD_AccountsContext())
             {
+                votants = (from st in context.Blocks
+                               select st.BlockId).Count();
                 //-----------------Number of parties to count------------------
                 for (int i = 1; i <=5; i++)
                 {
@@ -259,6 +266,8 @@ namespace RVT_A_BusinessLayer.Implement
                         where st.PartyChoosed == party.IDParty
                         select st).Count();
                     parties.Add(party);
+                    population = (from st in context.FiscData
+                                  select st.Idnp).Count();
 
                 }
 
@@ -266,8 +275,7 @@ namespace RVT_A_BusinessLayer.Implement
 
             return new VoteStatusResponse
             {
-                Time = DateTime.Now, TotalVotes = parties
-            };
+                Time = DateTime.Now, TotalVotes = parties, Votants = votants,Population=population            };
         }
 
     }

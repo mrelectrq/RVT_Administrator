@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace RVT_Block_lib.Models
+namespace RVT_A_BusinessLayer.Responses
 {
-    public class AuthenticationMessage
+    public class AdminAuthResp
     {
-        public string IDNP { get; set; }
-        public string VnPassword { get; set; }
-
+        public bool Status { get; set; }
+        public string Message { get; set; }
+        public string Token { get; set; }
         public string Serialize()
         {
-            var jsonSerializer = new DataContractJsonSerializer(typeof(AuthenticationMessage));
+            var jsonSerializer = new DataContractJsonSerializer(typeof(AdminAuthResp));
 
             using (var ms = new MemoryStream())
             {
@@ -24,14 +23,14 @@ namespace RVT_Block_lib.Models
             }
         }
 
-        public static AuthenticationMessage Deserialize(string json)
+        public static AdminAuthResp Deserialize(string json)
         {
-            var jsonSerializer = new DataContractJsonSerializer(typeof(AuthenticationMessage));
+            var jsonSerializer = new DataContractJsonSerializer(typeof(AdminAuthResp));
 
             using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
             {
 
-                var result = (AuthenticationMessage)jsonSerializer.ReadObject(ms);
+                var result = (AdminAuthResp)jsonSerializer.ReadObject(ms);
                 return result;
             }
         }

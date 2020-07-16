@@ -15,6 +15,7 @@ namespace RVT_A_DataLayer.Entities
         {
         }
 
+        public virtual DbSet<AdminSession> AdminSession { get; set; }
         public virtual DbSet<Blocks> Blocks { get; set; }
         public virtual DbSet<ConfirmAcc> ConfirmAcc { get; set; }
         public virtual DbSet<FiscData> FiscData { get; set; }
@@ -28,12 +29,34 @@ namespace RVT_A_DataLayer.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-5VAJ4Q7;Database=SFBD_Accounts;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=SFBD_Accounts;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AdminSession>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Ip)
+                    .IsRequired()
+                    .HasColumnName("IP")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastTime)
+                    .HasColumnName("Last time")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.Token)
+                    .IsRequired()
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Blocks>(entity =>
             {
                 entity.HasKey(e => e.BlockId);
