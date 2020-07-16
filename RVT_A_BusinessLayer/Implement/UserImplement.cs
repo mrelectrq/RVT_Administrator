@@ -129,13 +129,9 @@ namespace RVT_A_BusinessLayer.Implement
                 {
                     return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
                 }
-                else
-                {
-
-                }
             }
 
-            return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authenticated." };
+            return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authentication Successfull!" };
 
         }
         internal async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
