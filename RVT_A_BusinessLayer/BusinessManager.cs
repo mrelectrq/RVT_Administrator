@@ -12,7 +12,7 @@ namespace RVT_A_BusinessLayer
         {
             return new UserLvl();
         }
-        public IAuth GetAuth()
+        public IAdmin GetAdmin()
         {
             return new AdminLvl();
         }

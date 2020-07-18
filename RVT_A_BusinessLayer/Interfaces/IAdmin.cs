@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace RVT_A_BusinessLayer.Interfaces
 {
-    public interface IAuth
+    public interface IAdmin
     {
-
         public Task<AdminAuthResp> AdminAuth(AdminAuthMessage message);
 
+        public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote);
     }
 }

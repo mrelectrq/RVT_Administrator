@@ -16,12 +16,12 @@ namespace RVT_Administrator.Controllers
     [ApiController]
     public class VoteStatusController : ControllerBase
     {
-        private readonly ITerminal _terminal;
+        private readonly IAdmin _admin;
 
         public VoteStatusController()
         {
             var bl = new BusinessManager();
-            _terminal = bl.GetTerminal();
+            _admin = bl.GetAdmin();
         }
 
 
@@ -30,7 +30,7 @@ namespace RVT_Administrator.Controllers
         {
             if (ModelState.IsValid)
             {
-                var response = await _terminal.VoteStatus(message);
+                var response = await _admin.VoteStatus(message);
                 return response;
             }
             else 

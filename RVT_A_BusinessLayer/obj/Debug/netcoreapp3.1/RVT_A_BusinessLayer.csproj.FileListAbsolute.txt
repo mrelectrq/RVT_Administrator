@@ -68,3 +68,17 @@ C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\net
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.deps.json
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_DataLayer.dll
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_Block_lib.dll
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_A_DataLayer.pdb
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csprojAssemblyReference.cache
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfoInputs.cache
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfo.cs
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
+E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb

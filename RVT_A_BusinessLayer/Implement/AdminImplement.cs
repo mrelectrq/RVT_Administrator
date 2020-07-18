@@ -1,4 +1,5 @@
-﻿using RVT_A_BusinessLayer.Responses;
+﻿using RVT_A_BusinessLayer.BusinessModels;
+using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
 using RVT_Block_lib.Models;
 using System;
@@ -38,6 +39,51 @@ namespace RVT_A_BusinessLayer.Implement
 
             return new AdminAuthResp { Status = true, Message = "Authenticated.", Token = data.Token };
 
+        }
+        internal async Task<VoteStatusResponse> VoteStatusAction(VoteStatusMessage vote)
+        {
+            List<VoteStatistics> parties = new List<VoteStatistics>();
+            int votants = 0;
+            int population = 0;
+            int pending = 0;
+            var gender = new GenderStatistic();
+            using (var context = new SFBD_AccountsContext())
+            {
+                votants = (from st in context.Blocks
+                           select st.BlockId).Count();
+                //-----------------Number of parties to count------------------
+                for (int i = 1; i <= 5; i++)
+                {
+                    var party = new VoteStatistics();
+                    party.IDParty = i;
+                    party.Votes = (from st in context.Blocks
+                                   where st.PartyChoosed == party.IDParty
+                                   select st).Count();
+                    parties.Add(party);
+                    population = (from st in context.FiscData
+                                  select st.Idnp).Count();
+                    pending = (from st in context.IdvnAccounts
+                               select st.Idvn).Count();
+                    gender.Male = (from st in context.Blocks
+                                   where st.Gender == "1"
+                                   select st).Count();
+                    gender.Female = (from st in context.Blocks
+                                     where st.Gender == "2"
+                                     select st).Count();
+
+                }
+
+            }
+
+            return new VoteStatusResponse
+            {
+                Time = DateTime.Now,
+                TotalVotes = parties,
+                Votants = votants,
+                Population = population,
+                Pending=pending,
+                GenderStatistics=gender
+            };
         }
     }
 }

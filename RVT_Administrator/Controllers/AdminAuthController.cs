@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RVT_A_BusinessLayer;
-using RVT_A_BusinessLayer.Interfaces;
 using RVT_Block_lib.Models;
 using RVT_A_BusinessLayer.Responses;
+using RVT_A_BusinessLayer.Interfaces;
 
 namespace RVT_Administrator.Controllers
 {
@@ -15,12 +15,12 @@ namespace RVT_Administrator.Controllers
     [ApiController]
     public class AdminAuthController : ControllerBase
     {
-        private readonly IAuth auth;
+        private readonly IAdmin auth;
 
         public AdminAuthController()
         {
             var bl = new BusinessManager();
-            auth = bl.GetAuth();
+            auth = bl.GetAdmin();
         }
 
         [HttpPost]

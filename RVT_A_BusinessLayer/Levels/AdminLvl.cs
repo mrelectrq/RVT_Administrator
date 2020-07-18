@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace RVT_A_BusinessLayer.Levels
 {
-    public class AdminLvl : AdminImplement, IAuth
+    public class AdminLvl : AdminImplement, IAdmin
     {
         public Task<AdminAuthResp> AdminAuth(AdminAuthMessage message)
         {
             return AdminAuthAction(message);
+        }
+
+        public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote)
+        {
+            return VoteStatusAction(vote);
         }
     }
     

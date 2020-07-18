@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {}
+    "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+    "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "projectUniqueName": "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
         "projectName": "RVT_A_DataLayer",
-        "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
+        "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj",
+        "packagesPath": "C:\\Users\\C.I\\.nuget\\packages\\",
+        "outputPath": "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\C.I\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-                "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+              "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+                "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
               }
             }
           }
@@ -83,20 +80,17 @@
         }
       }
     },
-    "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+    "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "projectUniqueName": "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
         "projectName": "RVT_Block_lib",
-        "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
-        "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\obj\\",
+        "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj",
+        "packagesPath": "C:\\Users\\C.I\\.nuget\\packages\\",
+        "outputPath": "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\C.I\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

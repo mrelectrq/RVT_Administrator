@@ -43,3 +43,12 @@ C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreap
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csproj.CoreCompileInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+E:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.deps.json
+E:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.dll
+E:\RVT\RVT_Administrator\RVT_Block_lib\bin\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfoInputs.cache
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.AssemblyInfo.cs
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csproj.CoreCompileInputs.cache
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.dll
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.pdb
+E:\RVT\RVT_Administrator\RVT_Block_lib\obj\Debug\netcoreapp3.1\RVT_Block_lib.csprojAssemblyReference.cache
