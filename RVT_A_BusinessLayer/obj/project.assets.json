@@ -5112,19 +5112,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\C.I\\.nuget\\packages\\": {}
+    "C:\\Users\\Artyrik\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
       "projectName": "RVT_A_BusinessLayer",
-      "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\C.I\\.nuget\\packages\\",
-      "outputPath": "E:\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\RVT_A_BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\Artyrik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\C.I\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Artyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5137,11 +5141,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
-              "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
+            "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_A_DataLayer\\RVT_A_DataLayer.csproj"
             },
-            "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
-              "projectPath": "E:\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
+            "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj": {
+              "projectPath": "C:\\Users\\Artyrik\\Desktop\\RVT\\RVT_Administrator\\RVT_Block_lib\\RVT_Block_lib.csproj"
             }
           }
         }

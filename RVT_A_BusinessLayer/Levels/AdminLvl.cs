@@ -1,6 +1,7 @@
 ﻿using RVT_A_BusinessLayer.Implement;
 using RVT_A_BusinessLayer.Interfaces;
 using RVT_A_BusinessLayer.Responses;
+using RVT_A_DataLayer.Entities;
 using RVT_Block_lib.Models;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,10 @@ namespace RVT_A_BusinessLayer.Levels
         public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote)
         {
             return VoteStatusAction(vote);
+        }
+        public Task<List<Blocks>> Blocks(BlocksMessage blockmess)
+        {
+            return BlocksAction(blockmess);
         }
     }
     

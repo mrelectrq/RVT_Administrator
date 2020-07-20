@@ -1,4 +1,5 @@
 ﻿using RVT_A_BusinessLayer.Responses;
+using RVT_A_DataLayer.Entities;
 using RVT_Block_lib.Models;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace RVT_A_BusinessLayer.Interfaces
         public Task<AdminAuthResp> AdminAuth(AdminAuthMessage message);
 
         public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote);
+        public Task<List<Blocks>> Blocks(BlocksMessage blockmess);
     }
 }

@@ -1,6 +1,8 @@
-﻿using RVT_A_BusinessLayer.BusinessModels;
+﻿using Microsoft.Data.SqlClient;
+using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
+using RVT_Block_lib;
 using RVT_Block_lib.Models;
 using System;
 using System.Collections.Generic;
@@ -65,10 +67,10 @@ namespace RVT_A_BusinessLayer.Implement
                     pending = (from st in context.IdvnAccounts
                                select st.Idvn).Count();
                     gender.Male = (from st in context.Blocks
-                                   where st.Gender == "1"
+                                   where st.Gender == "Male"
                                    select st).Count();
                     gender.Female = (from st in context.Blocks
-                                     where st.Gender == "2"
+                                     where st.Gender == "Female"
                                      select st).Count();
 
                 }
@@ -81,9 +83,27 @@ namespace RVT_A_BusinessLayer.Implement
                 TotalVotes = parties,
                 Votants = votants,
                 Population = population,
-                Pending=pending,
-                GenderStatistics=gender
+                Pending = pending,
+                GenderStatistics = gender
             };
+        }
+        internal async Task<List<Blocks>> BlocksAction(BlocksMessage blockmess)
+        {
+            if(blockmess.Status=true)
+            {
+                var blocks = new List<Blocks>();
+                using (var context = new SFBD_AccountsContext())
+                {
+                    var query = (from st in context.Blocks
+                                 select st);
+                    foreach (var block in query.ToList())
+                    {
+                        blocks.Add(block);
+                    }
+                }
+                return blocks;
+            }
+            return null;
         }
     }
 }
