@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
@@ -7,6 +8,7 @@ using RVT_Block_lib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,7 +44,7 @@ namespace RVT_A_BusinessLayer.Implement
             return new AdminAuthResp { Status = true, Message = "Authenticated.", Token = data.Token };
 
         }
-        internal async Task<VoteStatusResponse> VoteStatusAction(VoteStatusMessage vote)
+        internal async Task<VoteStatusResponse> VoteStatusAction()
         {
             List<VoteStatistics> parties = new List<VoteStatistics>();
             int votants = 0;
@@ -89,7 +91,7 @@ namespace RVT_A_BusinessLayer.Implement
         }
         internal async Task<List<Blocks>> BlocksAction(BlocksMessage blockmess)
         {
-            if(blockmess.Status=true)
+            if (blockmess.Status = true)
             {
                 var blocks = new List<Blocks>();
                 using (var context = new SFBD_AccountsContext())

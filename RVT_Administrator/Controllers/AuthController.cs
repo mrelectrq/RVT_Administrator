@@ -24,6 +24,11 @@ namespace RVT_Administrator.Controllers
             _terminal = bl.GetTerminal();
         }
 
+        [HttpHead]
+        public IActionResult Head()
+        {
+            return Ok();
+        }
         [HttpPost]
         public async Task<ActionResult<AuthenticationResponse>> Auth([FromBody] AuthenticationMessage message)
         {

@@ -25,12 +25,12 @@ namespace RVT_Administrator.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<ActionResult<VoteStatusResponse>> VoteStatus([FromBody] VoteStatusMessage message)
+        [HttpGet]
+        public async Task<ActionResult<VoteStatusResponse>> VoteStatus()
         {
             if (ModelState.IsValid)
             {
-                var response = await _admin.VoteStatus(message);
+                var response = await _admin.VoteStatus();
                 return response;
             }
             else 

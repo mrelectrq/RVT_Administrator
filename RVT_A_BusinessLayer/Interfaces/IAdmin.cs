@@ -12,7 +12,7 @@ namespace RVT_A_BusinessLayer.Interfaces
     {
         public Task<AdminAuthResp> AdminAuth(AdminAuthMessage message);
 
-        public Task<VoteStatusResponse> VoteStatus(VoteStatusMessage vote);
+        public Task<VoteStatusResponse> VoteStatus();
         public Task<List<Blocks>> Blocks(BlocksMessage blockmess);
     }
 }
