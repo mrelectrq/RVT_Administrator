@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RVT_A_BusinessLayer;
 using RVT_Block_lib.Models;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_BusinessLayer.Interfaces;
+using NLog;
 
 namespace RVT_Administrator.Controllers
 {
@@ -16,6 +13,7 @@ namespace RVT_Administrator.Controllers
     public class AdminAuthController : ControllerBase
     {
         private readonly IAdmin auth;
+        private static Logger _nLog=LogManager.GetLogger("AdminLog");
 
         public AdminAuthController()
         {
@@ -26,13 +24,14 @@ namespace RVT_Administrator.Controllers
         [HttpPost]
         public async Task<ActionResult<AdminAuthResp>> AdminAuth([FromBody] AdminAuthMessage message)
         {
+            
             if (ModelState.IsValid)
             {
                 var resp = await auth.AdminAuth(message);
                 return resp;
             }
             else
-                return BadRequest();
+            return BadRequest();
         }
     }
 }

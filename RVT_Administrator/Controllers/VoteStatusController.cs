@@ -36,5 +36,16 @@ namespace RVT_Administrator.Controllers
             else 
                 return BadRequest();
         }
+        [HttpPost]
+        public async Task<ActionResult<RegionResponse>> RegionStatus([FromBody] string id)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _admin.RegionStatus(id);
+                return response;
+            }
+            else
+                return BadRequest();
+        }
     }
 }

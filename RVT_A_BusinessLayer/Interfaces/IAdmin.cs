@@ -14,5 +14,6 @@ namespace RVT_A_BusinessLayer.Interfaces
 
         public Task<VoteStatusResponse> VoteStatus();
         public Task<List<Blocks>> Blocks(BlocksMessage blockmess);
+        public Task<RegionResponse> RegionStatus(string id);
     }
 }

@@ -19,11 +19,13 @@ using System.Timers;
 using Microsoft.EntityFrameworkCore.Query;
 using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Helpers;
+using NLog;
 
 namespace RVT_A_BusinessLayer.Implement
 {
     public class UserImplement
     {
+        private static Logger _nLog = LogManager.GetLogger("UserLog");
         internal async Task<RegistrationResponse> registerAction(RegistrationMessage data)
         {
             var fiscData = new FiscData();
@@ -48,7 +50,7 @@ namespace RVT_A_BusinessLayer.Implement
                );
                     if (fisc == null)
                     {
-                        return new RegistrationResponse { Status = false, Message = "Datele introduse sunt gresite" };
+                        return new RegistrationResponse { Status = false, Message = "The data entered is incorrect." };
                     }
                 }
                 catch (AggregateException)
@@ -70,12 +72,14 @@ namespace RVT_A_BusinessLayer.Implement
             var regLbResponse = new RegLbResponse();
             try
             {
+                _nLog.Info("User data of " + data.Ip_address+" was transmitted to LoadBalancer.");
                 var data_resp = await response.Content.ReadAsStringAsync();
                 regLbResponse = JsonConvert.DeserializeObject<RegLbResponse>(data_resp);
             }
             catch (AggregateException e)
             {
-                return new RegistrationResponse { Status = false, Message = "Eroare de conectare la server LB.1.0.1" + e.Message };
+                _nLog.Error("Error! LoadBalancer is not responding.");
+                return new RegistrationResponse { Status = false, Message = "Error! LoadBalancer is not responding." + e.Message };
             }
 
             if (regLbResponse.Status == true)
@@ -111,9 +115,14 @@ namespace RVT_A_BusinessLayer.Implement
                 }
 
                 var random = new Random();
+                _nLog.Info("Registration | IP: " + data.Ip_address + "IDNP: " + data.IDNP + " was registered.");
                 return new RegistrationResponse { Status = true, ConfirmKey = random.Next(12452, 87620).ToString(), Message = "Registered", IDVN = regLbResponse.IDVN, Email = data.Email };
             }
-            else return new RegistrationResponse { Status = false, Message = "Eroare de inregistrare" };
+            else
+            {
+                _nLog.Info("Registration | Error! User IP: " + data.Ip_address + "IDNP: " + data.IDNP + " can't be registered.");
+                return new RegistrationResponse { Status = false, Message = "Registration error." };
+            }
         }
         internal async Task<AuthenticationResponse> AuthAction(AuthenticationMessage data)
         {
@@ -130,7 +139,7 @@ namespace RVT_A_BusinessLayer.Implement
                     return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
                 }
             }
-
+            _nLog.Info("Auth | "+data.IDNP + " authenticated successfull.");
             return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authentication Successfull!" };
 
         }
@@ -167,18 +176,20 @@ namespace RVT_A_BusinessLayer.Implement
                     return new VoteAdminResponse
                     {
                         VoteStatus = false,
-                        Message = "Procesul de votare este deja efectuat, nu puteti vota dublu",
+                        Message = "You have already vote, you can't vote twice.",
                         ProcessedTime = DateTime.Now
                     };
                 var fiscData = bd.FiscData.FirstOrDefault(m => m.Idnp == message.IDNP);
-                if (fiscData==null)
+                if (fiscData == null)
+                {
+                    _nLog.Info("Vote| "+message.IDNP+" identity can't be found");
                     return new VoteAdminResponse
                     {
                         VoteStatus = false,
-                        Message = "Eroare de identificare identitatii. Contactati suportul tehnic",
+                        Message = "Vote | Identity can't be found. Please, contact technical support.",
                         ProcessedTime = DateTime.Now
                     };
-
+                }
                 var party = bd.Parties.FirstOrDefault(m => m.Idpart.ToString() == message.Party);
                 var region = bd.Regions.FirstOrDefault(m => m.Region == fiscData.Region);
 
@@ -212,7 +223,7 @@ namespace RVT_A_BusinessLayer.Implement
                 }
                 catch (AggregateException e)
                 {
-                    return new VoteAdminResponse { VoteStatus = false, Message = "Eroare de conectare la server LB.1.0.1" + e.Message };
+                    return new VoteAdminResponse { VoteStatus = false, Message = "Error! LoadBalancer is not responding." + e.Message };
                 }
 
                 if(regLbResponse.Status==false)
@@ -239,41 +250,11 @@ namespace RVT_A_BusinessLayer.Implement
                 vote_status.VoteState = "Confirmed";
                 bd.Add(vote_status);
                 bd.SaveChanges();
+                _nLog.Info("Vote | User " + message.IDNP + " voted successful.");
                 return new VoteAdminResponse { VoteStatus = true, ProcessedTime = DateTime.Now, Message = "Voted" };
 
             }
         }
-
-        internal async Task<VoteStatusResponse> VoteStatusAction(VoteStatusMessage vote)
-        {
-            List<VoteStatistics> parties = new List<VoteStatistics>();
-            int votants = 0;
-            int population = 0;
-            using (var context = new SFBD_AccountsContext())
-            {
-                votants = (from st in context.Blocks
-                               select st.BlockId).Count();
-                //-----------------Number of parties to count------------------
-                for (int i = 1; i <=5; i++)
-                {
-                    var party = new VoteStatistics();
-                    party.IDParty = i;
-                    party.Votes = (from st in context.Blocks
-                        where st.PartyChoosed == party.IDParty
-                        select st).Count();
-                    parties.Add(party);
-                    population = (from st in context.FiscData
-                                  select st.Idnp).Count();
-
-                }
-
-            }
-
-            return new VoteStatusResponse
-            {
-                Time = DateTime.Now, TotalVotes = parties, Votants = votants,Population=population            };
-        }
-
     }
 }
 

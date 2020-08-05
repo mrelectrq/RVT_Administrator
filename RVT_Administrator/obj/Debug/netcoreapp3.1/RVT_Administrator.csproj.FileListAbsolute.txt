@@ -844,5 +844,12 @@ E:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\staticwebasse
 E:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.dll
 E:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.pdb
 E:\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.genruntimeconfig.cache
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\nlog.config
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.csproj.CoreCompileInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.MvcApplicationPartsAssemblyInfo.cache

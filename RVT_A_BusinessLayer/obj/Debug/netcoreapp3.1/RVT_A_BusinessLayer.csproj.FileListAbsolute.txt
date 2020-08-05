@@ -64,7 +64,6 @@ C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\bin\Debug\net
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csprojAssemblyReference.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfoInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.AssemblyInfo.cs
-C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
@@ -82,3 +81,4 @@ E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_Busin
 E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CopyComplete
 E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.dll
 E:\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.pdb
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_A_BusinessLayer\obj\Debug\netcoreapp3.1\RVT_A_BusinessLayer.csproj.CoreCompileInputs.cache

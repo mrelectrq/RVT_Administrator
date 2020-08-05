@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog;
 using RVT_A_DataLayer.Entities;
 
 namespace RVT_Administrator
@@ -63,6 +64,7 @@ namespace RVT_Administrator
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -73,7 +75,8 @@ namespace RVT_Administrator
             }
 
             app.UseHttpsRedirection();
-
+          
+            LogManager.Configuration.Variables["ConnectionStrings"] = Configuration.GetConnectionString("RVTLogs");
             app.UseRouting();
            /// app.UseCertificateForwarding();
             app.UseAuthentication();

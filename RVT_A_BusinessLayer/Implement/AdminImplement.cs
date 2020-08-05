@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using NLog;
 using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Responses;
 using RVT_A_DataLayer.Entities;
@@ -7,6 +9,7 @@ using RVT_Block_lib;
 using RVT_Block_lib.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -16,6 +19,8 @@ namespace RVT_A_BusinessLayer.Implement
 {
     public class AdminImplement
     {
+        private static Logger _nLog = LogManager.GetLogger("AdminLog");
+
         internal async Task<AdminAuthResp> AdminAuthAction(AdminAuthMessage data)
         {
             using (var db = new SFBD_AccountsContext())
@@ -31,10 +36,12 @@ namespace RVT_A_BusinessLayer.Implement
 
                 if (verif == null)
                 {
-                    return new AdminAuthResp { Status = false, Message = "IDNP or password are not correct." };
+                    _nLog.Info(data.IP + " tried to auth.");
+                    return new AdminAuthResp { Status = false, Message = "Username or password are not correct." };
                 }
                 else
                 {
+                    _nLog.Info(data.IP + " Authenticated.");
                     verif.LastTime = data.date;
                     verif.Ip = data.IP;
                     db.SaveChanges();
@@ -106,6 +113,59 @@ namespace RVT_A_BusinessLayer.Implement
                 return blocks;
             }
             return null;
+        }
+        internal async Task<RegionResponse> RegionAction(string id)
+        {
+            List<VoteStatistics> parties = new List<VoteStatistics>();
+            int votants = 0;
+            int population = 0;
+            int pending = 0;
+            var gender = new GenderStatistic();
+            using (var context = new SFBD_AccountsContext())
+            {
+                votants = (from st in context.Blocks
+                           where st.RegionChoosed == Int32.Parse(id)
+                           select st.BlockId).Count();
+                //-----------------Number of parties to count------------------
+                for (int i = 1; i <= context.Parties.Count(); i++)
+                {
+                    var party = new VoteStatistics();
+                    party.IDParty = i;
+                    party.Votes = (from st in context.Blocks
+                                   where st.PartyChoosed == party.IDParty &&
+                                   st.RegionChoosed== Int32.Parse(id)
+                    select st).Count();
+                    parties.Add(party);
+                }
+                //-----------------Population------------------
+                population = (from st in context.FiscData
+                              where st.Region == id
+                              select st.Idnp).Count();
+
+                    //-----------------Number of male gender voters------------------
+                    gender.Male = (from st in context.Blocks
+                                   where st.Gender == "Male" &&
+                                   st.RegionChoosed == Int32.Parse(id)
+                                   select st).Count();
+                    //-----------------Number of female gender voters------------------
+                    gender.Female = (from st in context.Blocks
+                                     where st.Gender == "Female" &&
+                                     st.RegionChoosed == Int32.Parse(id)
+                                     select st).Count();
+
+                
+
+            }
+
+            return new RegionResponse
+            {
+                Time = DateTime.Now,
+                TotalVotes = parties,
+                Votants = votants,
+                Population = population,
+                Pending = pending,
+                GenderStatistics = gender
+            };
         }
     }
 }

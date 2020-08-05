@@ -25,6 +25,10 @@ namespace RVT_A_BusinessLayer.Levels
         {
             return BlocksAction(blockmess);
         }
+        public Task<RegionResponse> RegionStatus(string id)
+        {
+            return RegionAction(id);
+        }
     }
     
 }
