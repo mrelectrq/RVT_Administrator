@@ -24,13 +24,12 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Extensions.Configuration;
+using RVT_A_BusinessLayer.Services;
 
 namespace RVT_A_BusinessLayer.Implement
 {
     public class UserImplement
     {
-        private readonly IConfiguration root;
-        private static Logger _nLog = LogManager.GetLogger("UserLog");
         internal async Task<RegistrationResponse> registerAction(RegistrationMessage data)
         {
             var fiscData = new FiscData();
@@ -82,33 +81,19 @@ namespace RVT_A_BusinessLayer.Implement
             var regLbResponse = new RegLbResponse();
             try
             {
-                _nLog.Info("User data of " + data.Ip_address+" was transmitted to LoadBalancer.");
                 var data_resp = await response.Content.ReadAsStringAsync();
                 regLbResponse = JsonConvert.DeserializeObject<RegLbResponse>(data_resp);
             }
             catch (AggregateException e)
             {
-                _nLog.Error("Error! LoadBalancer is not responding.");
                 return new RegistrationResponse { Status = false, Message = "Error! LoadBalancer is not responding." + e.Message };
             }
 
             if (regLbResponse.Status == true)
             {
-                ///-------SMTP SEND EMAIL WITH PASSWORD------
-                // Who send?
-                MailAddress From = new MailAddress("rvtvote@gmail.com", "RVT Vote");
-                string utilizator = "rvtvote@gmail.com";
-                string password = "Ialoveni1";
-                // where to send?
-                MailAddress To = new MailAddress(data.Email);
-                MailMessage msg = new MailMessage(From, To);
-                msg.Subject = "Registration - RVT";
-                msg.Body = "Registration Code - " + regLbResponse.VnPassword;
-                msg.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential(utilizator, password);
-                smtp.EnableSsl = true;
-                smtp.Send(msg);
+                ///-------SEND EMAIL WITH PASSWORD------
+                EmailSender.Send(data.Email);
+
                 using (var db = new SFBD_AccountsContext())
                 {
                     var account = new IdvnAccounts();
@@ -125,13 +110,11 @@ namespace RVT_A_BusinessLayer.Implement
                 }
 
                 var random = new Random();
-                _nLog.Info("Registration | IP: " + data.Ip_address + "IDNP: " + data.IDNP + " was registered.");
-                return new RegistrationResponse { Status = true, ConfirmKey = random.Next(12452, 87620).ToString(), Message = "Registered", IDVN = regLbResponse.IDVN, Email = data.Email };
+                return new RegistrationResponse { Status = true, ConfirmKey = random.Next(12452, 87620).ToString(), Message = "Registration | IP: " + data.Ip_address + "IDNP: " + data.IDNP + " was registered.", IDVN = regLbResponse.IDVN, Email = data.Email };
             }
             else
             {
-                _nLog.Info("Registration | Error! User IP: " + data.Ip_address + "IDNP: " + data.IDNP + " can't be registered.");
-                return new RegistrationResponse { Status = false, Message = "Registration error." };
+                return new RegistrationResponse { Status = false, Message = "Registration | Error! User IP: " + data.Ip_address + "IDNP: " + data.IDNP + " can't be registered." };
             }
         }
         internal async Task<AuthenticationResponse> AuthAction(AuthenticationMessage data)
@@ -146,11 +129,10 @@ namespace RVT_A_BusinessLayer.Implement
 
                 if (verif == null)
                 {
-                    return new AuthenticationResponse { Status = false, Message = "IDNP or password are not correct." };
+                    return new AuthenticationResponse { Status = false, Message = "Auth | Error! IDNP or password are not correct." };
                 }
             }
-            _nLog.Info("Auth | "+data.IDNP + " authenticated successfull.");
-            return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Authentication Successfull!" };
+            return new AuthenticationResponse { Status = true, IDVN = idvn, Message = "Auth | Authentication Successfull!" };
 
         }
         internal async Task<VoteAdminResponse> VoteAction(VoteAdminMessage message)
@@ -186,13 +168,13 @@ namespace RVT_A_BusinessLayer.Implement
                     return new VoteAdminResponse
                     {
                         VoteStatus = false,
-                        Message = "You have already vote, you can't vote twice.",
+                        Message = "Vote | You have already voted, you can't vote twice.",
                         ProcessedTime = DateTime.Now
                     };
                 var fiscData = bd.FiscData.FirstOrDefault(m => m.Idnp == message.IDNP);
                 if (fiscData == null)
                 {
-                    _nLog.Info("Vote| "+message.IDNP+" identity can't be found");
+                    
                     return new VoteAdminResponse
                     {
                         VoteStatus = false,
@@ -200,7 +182,7 @@ namespace RVT_A_BusinessLayer.Implement
                         ProcessedTime = DateTime.Now
                     };
                 }
-                var party = bd.Parties.FirstOrDefault(m => m.Idpart.ToString() == message.Party);
+                var party = bd.Parties.FirstOrDefault(m => m.Party == message.Party);
                 var region = bd.Regions.FirstOrDefault(m => m.Region == fiscData.Region);
 
                 var chooser = new ChooserLbMessage();
@@ -240,7 +222,7 @@ namespace RVT_A_BusinessLayer.Implement
                 }
                 catch (AggregateException e)
                 {
-                    return new VoteAdminResponse { VoteStatus = false, Message = "Error! LoadBalancer is not responding." + e.Message };
+                    return new VoteAdminResponse { VoteStatus = false, Message = "Vote | Error! LoadBalancer is not responding." + e.Message };
                 }
 
                 if(regLbResponse.Status==false)
@@ -267,8 +249,7 @@ namespace RVT_A_BusinessLayer.Implement
                 vote_status.VoteState = "Confirmed";
                 bd.Add(vote_status);
                 bd.SaveChanges();
-                _nLog.Info("Vote | User " + message.IDNP + " voted successful.");
-                return new VoteAdminResponse { VoteStatus = true, ProcessedTime = DateTime.Now, Message = "Voted" };
+                return new VoteAdminResponse { VoteStatus = true, ProcessedTime = DateTime.Now, Message = "Vote | User " + message.IDNP + " voted successful." };
 
             }
         }

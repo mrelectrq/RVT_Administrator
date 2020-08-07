@@ -17,7 +17,6 @@ namespace RVT_Administrator.Controllers
     public class BlocksController : ControllerBase
     {
         private readonly IAdmin _admin;
-
         public BlocksController()
         {
             var bl = new BusinessManager();

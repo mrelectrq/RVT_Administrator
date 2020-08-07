@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using NLog;
 using RVT_A_BusinessLayer;
 using RVT_A_BusinessLayer.Interfaces;
 using RVT_A_BusinessLayer.Responses;
@@ -18,6 +20,7 @@ namespace RVT_Administrator.Controllers
     {
         private readonly ITerminal _terminal;
 
+        private static Logger _nLog = LogManager.GetLogger("UserLog");
         public AuthController()
         {
             var bl = new BusinessManager();
@@ -35,6 +38,9 @@ namespace RVT_Administrator.Controllers
             if (ModelState.IsValid)
             {
                 var resp = await _terminal.Auth(message);
+                if (resp.Status = true)
+                    _nLog.Info(resp.Message);
+                else _nLog.Error(resp.Message);
                 return resp;
             }
             else

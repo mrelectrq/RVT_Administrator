@@ -28,6 +28,9 @@ namespace RVT_Administrator.Controllers
             if (ModelState.IsValid)
             {
                 var resp = await auth.AdminAuth(message);
+                if (resp.Status = true)
+                    _nLog.Info(resp.Message);
+                else _nLog.Error(resp.Message);
                 return resp;
             }
             else

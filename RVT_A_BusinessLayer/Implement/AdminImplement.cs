@@ -20,7 +20,6 @@ namespace RVT_A_BusinessLayer.Implement
 {
     public class AdminImplement
     {
-        private static Logger _nLog = LogManager.GetLogger("AdminLog");
 
         internal async Task<AdminAuthResp> AdminAuthAction(AdminAuthMessage data)
         {
@@ -37,19 +36,17 @@ namespace RVT_A_BusinessLayer.Implement
 
                 if (verif == null)
                 {
-                    _nLog.Info(data.IP + " tried to auth.");
-                    return new AdminAuthResp { Status = false, Message = "Username or password are not correct." };
+                    return new AdminAuthResp { Status = false, Message = "Admin Auth | Error! Username or password are not correct." };
                 }
                 else
                 {
-                    _nLog.Info(data.IP + " Authenticated.");
                     verif.LastTime = data.date;
                     verif.Ip = data.IP;
                     db.SaveChanges();
                 }
             }
 
-            return new AdminAuthResp { Status = true, Message = "Authenticated.", Token = data.Token };
+            return new AdminAuthResp { Status = true, Message = "Admin Auth | "+data.IP+" authenticated.", Token = data.Token };
 
         }
         internal async Task<VoteStatusResponse> VoteStatusAction()

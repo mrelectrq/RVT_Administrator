@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 using RVT_A_BusinessLayer;
 using RVT_A_BusinessLayer.Interfaces;
 using RVT_A_BusinessLayer.Responses;
@@ -17,7 +18,7 @@ namespace RVT_Administrator.Controllers
     public class RegisterController : ControllerBase
     {
         ITerminal terminal;
-
+        private static Logger _nLog = LogManager.GetLogger("UserLog");
         public RegisterController()
         {
            var bl = new BusinessManager();
@@ -31,7 +32,10 @@ namespace RVT_Administrator.Controllers
             if (ModelState.IsValid)
             {
                 var result = await terminal.Registration(message);
-
+                if (result.Status = false)
+                    _nLog.Error(result.Status);
+                else
+                    _nLog.Info(result.Message);
                 return result;
             }
             else
