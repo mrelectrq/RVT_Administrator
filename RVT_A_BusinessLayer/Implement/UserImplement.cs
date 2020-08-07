@@ -20,11 +20,16 @@ using Microsoft.EntityFrameworkCore.Query;
 using RVT_A_BusinessLayer.BusinessModels;
 using RVT_A_BusinessLayer.Helpers;
 using NLog;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.Extensions.Configuration;
 
 namespace RVT_A_BusinessLayer.Implement
 {
     public class UserImplement
     {
+        private readonly IConfiguration root;
         private static Logger _nLog = LogManager.GetLogger("UserLog");
         internal async Task<RegistrationResponse> registerAction(RegistrationMessage data)
         {
@@ -61,7 +66,12 @@ namespace RVT_A_BusinessLayer.Implement
 
             // To LOADBALANCER
             var content = new StringContent(data.Serialize(), Encoding.UTF8, "application/json");
+            var clientCertificate =
+                new X509Certificate2(Path.Combine(@"..\Certs", "administrator.pfx"), "ar4iar4i"
+                , X509KeyStorageFlags.Exportable);
+
             var handler = new HttpClientHandler();
+            handler.ClientCertificates.Add(clientCertificate);
             handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             var client = new HttpClient(handler);
             client.BaseAddress = new Uri("https://localhost:44322/");
@@ -207,7 +217,14 @@ namespace RVT_A_BusinessLayer.Implement
                 chooser.IDNP = fiscData.Idnp;
 
                 var content = new StringContent(JsonConvert.SerializeObject(chooser), Encoding.UTF8, "application/json");
+
+
+                var clientCertificate =
+    new X509Certificate2(Path.Combine(@"..\Certs", "administrator.pfx"), "ar4iar4i"
+    , X509KeyStorageFlags.Exportable);
+
                 var handler = new HttpClientHandler();
+                handler.ClientCertificates.Add(clientCertificate);
                 handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
                 var client = new HttpClient(handler);
                 client.BaseAddress = new Uri("https://localhost:44322/");

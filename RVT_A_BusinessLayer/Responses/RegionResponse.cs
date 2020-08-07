@@ -8,6 +8,7 @@ namespace RVT_A_BusinessLayer.Responses
 {
    public class RegionResponse
     {
+        public string Name { get; set; }
         public List<VoteStatistics> TotalVotes { get; set; }
         public int Votants { get; set; }
         public DateTime Time { get; set; }

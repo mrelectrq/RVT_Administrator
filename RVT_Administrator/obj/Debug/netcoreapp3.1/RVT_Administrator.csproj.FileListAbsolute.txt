@@ -851,5 +851,6 @@ C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netco
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Certificate.dll
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.csproj.CoreCompileInputs.cache
 C:\Users\Artyrik\Desktop\RVT\RVT_Administrator\RVT_Administrator\obj\Debug\netcoreapp3.1\RVT_Administrator.MvcApplicationPartsAssemblyInfo.cache

@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -120,12 +121,16 @@ namespace RVT_A_BusinessLayer.Implement
             int votants = 0;
             int population = 0;
             int pending = 0;
+            string name;
             var gender = new GenderStatistic();
             using (var context = new SFBD_AccountsContext())
             {
                 votants = (from st in context.Blocks
                            where st.RegionChoosed == Int32.Parse(id)
                            select st.BlockId).Count();
+                name = (from st in context.Regions
+                        where st.Idreg == Int32.Parse(id)
+                select st.Region).Single().ToString();
                 //-----------------Number of parties to count------------------
                 for (int i = 1; i <= context.Parties.Count(); i++)
                 {
@@ -139,7 +144,7 @@ namespace RVT_A_BusinessLayer.Implement
                 }
                 //-----------------Population------------------
                 population = (from st in context.FiscData
-                              where st.Region == id
+                              where st.Region == name
                               select st.Idnp).Count();
 
                     //-----------------Number of male gender voters------------------
@@ -159,6 +164,7 @@ namespace RVT_A_BusinessLayer.Implement
 
             return new RegionResponse
             {
+                Name=name,
                 Time = DateTime.Now,
                 TotalVotes = parties,
                 Votants = votants,

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "RVT_A_BusinessLayer/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Certificate": "3.1.6",
           "NLog": "4.7.2",
           "NLog.Extensions.Logging": "1.6.4",
           "NLog.Web.AspNetCore": "4.9.2",
@@ -18,6 +19,14 @@
         },
         "runtime": {
           "RVT_A_BusinessLayer.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Certificate/3.1.6": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Certificate.dll": {
+            "assemblyVersion": "3.1.6.0",
+            "fileVersion": "3.100.620.31714"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.6": {
@@ -993,6 +1002,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Certificate/3.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hpGmI6jTpJn1q4XVLj3uNL6rgoZemlHabJOOF0rXEL1/0dUZTXqZi9NMvqp/RcFwH6K0l2KeVaU5tTVhnD/rQg==",
+      "path": "microsoft.aspnetcore.authentication.certificate/3.1.6",
+      "hashPath": "microsoft.aspnetcore.authentication.certificate.3.1.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.6": {
       "type": "package",
