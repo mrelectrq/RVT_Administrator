@@ -25,17 +25,7 @@ namespace RVT_Administrator.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<ActionResult<VoteStatusResponse>> VoteStatus()
-        {
-            if (ModelState.IsValid)
-            {
-                var response = await _admin.VoteStatus();
-                return response;
-            }
-            else 
-                return BadRequest();
-        }
+
         [HttpPost]
         public async Task<ActionResult<RegionResponse>> RegionStatus([FromBody] string id)
         {

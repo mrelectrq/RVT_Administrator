@@ -18,8 +18,4 @@
     <ProjectReference Include="..\RVT_Block_lib\RVT_Block_lib.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

@@ -16,11 +16,6 @@ namespace RVT_A_BusinessLayer.Levels
         {
             return AdminAuthAction(message);
         }
-
-        public Task<VoteStatusResponse> VoteStatus()
-        {
-            return VoteStatusAction();
-        }
         public Task<List<Blocks>> Blocks(BlocksMessage blockmess)
         {
             return BlocksAction(blockmess);

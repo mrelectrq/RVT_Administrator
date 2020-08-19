@@ -11,8 +11,6 @@ namespace RVT_A_BusinessLayer.Interfaces
     public interface IAdmin
     {
         public Task<AdminAuthResp> AdminAuth(AdminAuthMessage message);
-
-        public Task<VoteStatusResponse> VoteStatus();
         public Task<List<Blocks>> Blocks(BlocksMessage blockmess);
         public Task<RegionResponse> RegionStatus(string id);
     }

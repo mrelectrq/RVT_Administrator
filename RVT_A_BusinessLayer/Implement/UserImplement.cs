@@ -71,6 +71,7 @@ namespace RVT_A_BusinessLayer.Implement
 
             var handler = new HttpClientHandler();
             handler.ClientCertificates.Add(clientCertificate);
+
             handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             var client = new HttpClient(handler);
             client.BaseAddress = new Uri("https://localhost:44322/");
@@ -92,7 +93,7 @@ namespace RVT_A_BusinessLayer.Implement
             if (regLbResponse.Status == true)
             {
                 ///-------SEND EMAIL WITH PASSWORD------
-                EmailSender.Send(data.Email);
+                EmailSender.Send(data.Email, regLbResponse.VnPassword);
 
                 using (var db = new SFBD_AccountsContext())
                 {

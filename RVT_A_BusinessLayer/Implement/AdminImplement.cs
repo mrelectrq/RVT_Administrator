@@ -49,51 +49,6 @@ namespace RVT_A_BusinessLayer.Implement
             return new AdminAuthResp { Status = true, Message = "Admin Auth | "+data.IP+" authenticated.", Token = data.Token };
 
         }
-        internal async Task<VoteStatusResponse> VoteStatusAction()
-        {
-            List<VoteStatistics> parties = new List<VoteStatistics>();
-            int votants = 0;
-            int population = 0;
-            int pending = 0;
-            var gender = new GenderStatistic();
-            using (var context = new SFBD_AccountsContext())
-            {
-                votants = (from st in context.Blocks
-                           select st.BlockId).Count();
-                //-----------------Number of parties to count------------------
-                for (int i = 1; i <= 5; i++)
-                {
-                    var party = new VoteStatistics();
-                    party.IDParty = i;
-                    party.Votes = (from st in context.Blocks
-                                   where st.PartyChoosed == party.IDParty
-                                   select st).Count();
-                    parties.Add(party);
-                    population = (from st in context.FiscData
-                                  select st.Idnp).Count();
-                    pending = (from st in context.IdvnAccounts
-                               select st.Idvn).Count();
-                    gender.Male = (from st in context.Blocks
-                                   where st.Gender == "Male"
-                                   select st).Count();
-                    gender.Female = (from st in context.Blocks
-                                     where st.Gender == "Female"
-                                     select st).Count();
-
-                }
-
-            }
-
-            return new VoteStatusResponse
-            {
-                Time = DateTime.Now,
-                TotalVotes = parties,
-                Votants = votants,
-                Population = population,
-                Pending = pending,
-                GenderStatistics = gender
-            };
-        }
         internal async Task<List<Blocks>> BlocksAction(BlocksMessage blockmess)
         {
             if (blockmess.Status = true)
@@ -122,27 +77,30 @@ namespace RVT_A_BusinessLayer.Implement
             var gender = new GenderStatistic();
             using (var context = new SFBD_AccountsContext())
             {
-                votants = (from st in context.Blocks
-                           where st.RegionChoosed == Int32.Parse(id)
-                           select st.BlockId).Count();
-                name = (from st in context.Regions
-                        where st.Idreg == Int32.Parse(id)
-                select st.Region).Single().ToString();
-                //-----------------Number of parties to count------------------
-                for (int i = 1; i <= context.Parties.Count(); i++)
+                if (id != "0")
                 {
-                    var party = new VoteStatistics();
-                    party.IDParty = i;
-                    party.Votes = (from st in context.Blocks
-                                   where st.PartyChoosed == party.IDParty &&
-                                   st.RegionChoosed== Int32.Parse(id)
-                    select st).Count();
-                    parties.Add(party);
-                }
-                //-----------------Population------------------
-                population = (from st in context.FiscData
-                              where st.Region == name
-                              select st.Idnp).Count();
+
+                    votants = (from st in context.Blocks
+                               where st.RegionChoosed == Int32.Parse(id)
+                               select st.BlockId).Count();
+                    name = (from st in context.Regions
+                            where st.Idreg == Int32.Parse(id)
+                            select st.Region).Single().ToString();
+                    //-----------------Number of parties to count------------------
+                    for (int i = 1; i <= context.Parties.Count(); i++)
+                    {
+                        var party = new VoteStatistics();
+                        party.IDParty = i;
+                        party.Votes = (from st in context.Blocks
+                                       where st.PartyChoosed == party.IDParty &&
+                                       st.RegionChoosed == Int32.Parse(id)
+                                       select st).Count();
+                        parties.Add(party);
+                    }
+                    //-----------------Population------------------
+                    population = (from st in context.FiscData
+                                  where st.Region == name
+                                  select st.Idnp).Count();
 
                     //-----------------Number of male gender voters------------------
                     gender.Male = (from st in context.Blocks
@@ -154,7 +112,34 @@ namespace RVT_A_BusinessLayer.Implement
                                      where st.Gender == "Female" &&
                                      st.RegionChoosed == Int32.Parse(id)
                                      select st).Count();
-
+                }
+                else
+                {
+                    name = "All";
+                    votants = (from st in context.Blocks
+                               select st.BlockId).Count();
+                    //-----------------Number of parties to count------------------
+                    for (int i = 1; i <= 5; i++)
+                    {
+                        var party = new VoteStatistics();
+                        party.IDParty = i;
+                        party.Votes = (from st in context.Blocks
+                                       where st.PartyChoosed == party.IDParty
+                                       select st).Count();
+                        parties.Add(party);
+                    }
+                    
+                    population = (from st in context.FiscData
+                                  select st.Idnp).Count();
+                    pending = (from st in context.IdvnAccounts
+                               select st.Idvn).Count();
+                    gender.Male = (from st in context.Blocks
+                                   where st.Gender == "Male"
+                                   select st).Count();
+                    gender.Female = (from st in context.Blocks
+                                     where st.Gender == "Female"
+                                     select st).Count();
+                }
                 
 
             }
